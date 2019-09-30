@@ -1,7 +1,19 @@
 # DHGNN: Dynamic Hypergraph Neural Networks
+Creatd byt Jianwen Jiang, Yuxuan Wei, Yifan Feng, Jingxuan Cao and Yue Gao from Tsinghua University and Xiamen University.
+![framework](docs/framework.png)
 ## Introduction
-DHGNN is a kind of neural networks modeling dynamically evolving hypergraph structures.
+This work has been published in IJCAI 2019.  
+Dynamic Hypergraph Neural Networks (DHGNN) is a kind of neural networks modeling dynamically evolving hypergraph structures, which is composed of the stacked layers of two modules: dynamic hypergraph construction (DHG) and hypergrpah convolution (HGC). Considering initially constructed hypergraph is probably not a suitable representation for data, the DHG module dynamically updates hypergraph structure on each layer. Then hypergraph convolution is introduced to encode high-order data relations in a hypergraph structure. The HGC module includes two phases: vertex convolution and hyperedge convolution, which are designed to aggregate feature among vertices and hyperedges, respectively. We have evaluated our method on standard datasets, the Cora citation network and Microblog dataset.   
+In this repository, we release the code for train and test DHGNN on Cora citation dataset.
 ## Citation
+```
+@inproceedings{Jiang2019Dynamic,
+  title={Dynamic Hypergraph Neural Networks},
+  author={Jianwen Jiang, Yuxuan Wei, Yifan Feng, Jingxuan Cao and Yue Gao},
+  booktitle={Proceedings of International Joint Conferences on Artificial Intelligence},
+  year={2019}
+}
+```
 ## Installation
 The code has been tested with Python 3.6, CUDA 9.0 on Ubuntu 16.04. To run the code, you may also need some of the following Python packages, which can be installed via pip or conda:
 - absl-py (0.7.0)
@@ -44,26 +56,8 @@ The code has been tested with Python 3.6, CUDA 9.0 on Ubuntu 16.04. To run the c
 - torchvision (0.2.1)
 - Werkzeug (0.12.2)
 - wheel (0.29.0)
-## Experiment
 ## Usage
+### Data Preparation
+
 ## License
 Our code is released under MIT License (see LICENSE file for details).
-### Cora
-- **Setting**: standard setting, 140 train, 500 valid, 1000 test   
-- **state of the art**: LGCN 83.3%   
-- **DHGNN_knn**: 83.8% (max)  
-    - **config_cora.yaml**
-- **DHGNN_cluster**: 83.8% (max)
-    - **config_cora_cluster.yaml**
-### ModelNet40
-- **Setting**: same as HGNN  
-- **HGNN**: 96.7%  
-- **DHGNN_knn**: 97.6%  
-    - **config_modelnet40.yaml**
-### Weibo
-- **Setting**: 4690 train, 400 valid, 500 test (10 times random)  
-- **Bi-MHG**: 90.0%  
-- **DHGNN_knn**: 91.8%  (mean)
-    - **config_weibo.yaml**
-- **DHGNN_cluster**: 91.0% (mean)
-    - **config_weibo_cluster.yaml**
