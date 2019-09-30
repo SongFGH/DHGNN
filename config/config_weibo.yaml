@@ -1,0 +1,39 @@
+###########################################################################
+##### must check the direction of data_root and result_root before run ####
+###########################################################################
+
+#configure data path
+data_type: socialmedia
+activate_dataset: weibo
+data_root: &d_r /home/weiyuxuan/data
+weibo_ft: !join [*d_r, weibo, mImageTextFeaSel.mat]
+weibo_sentiment: !join [*d_r, weibo, mWordSentimentCell_2547_49_1553.mat]
+
+
+#Hypergraph
+graph_type: knn
+knns: [6, 6, 6]                 # for data_type == knn & cluster
+clusters: [500, 500, 500]       # only for data_type == cluster
+adjacent_clusters: [1, 1, 1]    # only for data_type == cluster
+
+#Model
+model_type: Transductive
+model: MultiInputGCN
+hiddens: [32, 32, 32]
+has_bias: True
+
+
+#Result
+# configure result path
+result_root: &r_r /home/weiyuxuan/result/AttentionEdgeConvHGNN
+ckpt_folder: !join [*r_r, ckpt]
+
+
+#Train
+max_epoch: 30
+milestones: [200]
+gamma: 0.1
+lr: 0.01
+drop_out: 0.5
+print_freq: 1
+weight_decay: 0.0005
