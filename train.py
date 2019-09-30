@@ -19,7 +19,7 @@ def setup_seed(seed):
 	torch.backends.cudnn.deterministic = True
 
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '7'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 
 def train_gcn(model, fts, lbls, idx_train, idx_val, edge_dict,
