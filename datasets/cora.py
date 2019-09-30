@@ -190,7 +190,7 @@ def load_citation_data(cfg):
 
 
 if __name__ == '__main__':
-    cfg = get_config('../config/config.yaml')
+    cfg = get_config('../config/config_cora.yaml')
     if cfg['standard_split']:
         load_citation_data(cfg)
     else:

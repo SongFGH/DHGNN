@@ -1,5 +1,4 @@
 from datasets.cora import load_citation_data, load_cora_data
-from datasets.ModelNet40 import load_modelnet40_data
 
 
 def source_select(cfg):
@@ -10,5 +9,3 @@ def source_select(cfg):
             return load_citation_data
         else:
             return load_cora_data
-    else:
-        return load_modelnet40_data

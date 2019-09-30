@@ -19,16 +19,4 @@ def get_config(dir):
     with open(dir, 'r') as f:
         cfg = yaml.load(f)
 
-    check_dirs(cfg)
-
     return cfg
-
-
-def check_dir(folder):
-    if not osp.exists(folder):
-        os.mkdir(folder)
-
-
-def check_dirs(cfg):
-    check_dir(cfg['result_root'])
-    check_dir(cfg['ckpt_folder'])
