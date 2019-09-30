@@ -1,5 +1,5 @@
 # DHGNN: Dynamic Hypergraph Neural Networks
-Creatd byt Jianwen Jiang, Yuxuan Wei, Yifan Feng, Jingxuan Cao and Yue Gao from Tsinghua University and Xiamen University.
+Created by Jianwen Jiang, Yuxuan Wei, Yifan Feng, Jingxuan Cao and Yue Gao from Tsinghua University and Xiamen University.
 ![framework](docs/framework.png)
 ## Introduction
 This work has been published in IJCAI 2019.  
